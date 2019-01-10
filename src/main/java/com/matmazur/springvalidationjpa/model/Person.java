@@ -4,10 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
 @Entity
@@ -16,15 +13,15 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "{com.matmazur.springvalidationjpa.model.Person.name}")
     private String name;
-    @NotBlank
+    @NotBlank(message = "{com.matmazur.springvalidationjpa.model.Person.surname}")
     private String surname;
-    @NotBlank
-    @Email
+    @NotEmpty(message = "{com.matmazur.springvalidationjpa.model.Person.email.empty}")
+    @Email(message = "{com.matmazur.springvalidationjpa.model.Person.email.format}")
     private String email;
-    @Min(value = 1)
-    @NotNull
+    @Min(value = 1, message = "{com.matmazur.springvalidationjpa.model.Person.age.min}")
+    @NotNull(message = "{com.matmazur.springvalidationjpa.model.Person.age.empty}")
     private Integer age;
 
     public Person(String name, String surname, String email, Integer age) {
