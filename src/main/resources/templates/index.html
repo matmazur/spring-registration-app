@@ -11,14 +11,9 @@
 
 <h1></h1>
 
-<h2>Person registration form</h2>
-<form th:method="post" th:action="@{/}" th:object="${person}">
-    <input type="text" placeholder="Name" th:field="*{name}"><span>wrong</span>
-    <input type="text" placeholder="Surname" th:field="*{surname}">
-    <input type="text" placeholder="Email" th:field="*{email}">
-    <input type="number" placeholder="Name" th:field="*{age}">
-    <input type="submit" value="add">
-</form>
+<h2>Hello world</h2>
+<a th:href="@{/add-person}">Registration</a>
+
 
 </body>
 </html>
