@@ -19,7 +19,6 @@ public class SpringValidationJpaApplication {
         personService.add(person);
         personService.add(person2);
 
-        ctx.close();
     }
 }
 
