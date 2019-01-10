@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
     private String name;
@@ -27,7 +27,7 @@ public class Person {
     @NotNull
     private Integer age;
 
-    public Person(@NotBlank String name, @NotBlank String surname, @NotBlank @Email String email, @Min(value = 1) @NotNull Integer age) {
+    public Person(String name, String surname, String email, Integer age) {
         this.name = name;
         this.surname = surname;
         this.email = email;
