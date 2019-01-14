@@ -6,14 +6,45 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .form-nonblock {
+            display: inline;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
 <h1></h1>
 
-<h2>Hello world</h2>
-<a th:href="@{/add-person}">Registration</a>
+<h2>Registration world</h2>
+<button><a th:href="@{/add-person}">Add user</a></button>
 
+<table border="1">
+    <th>id</th>
+    <th>name</th>
+    <th>surname</th>
+    <th>email</th>
+    <th>age</th>
+    <tr th:if="${!people.isEmpty()}" th:each="p : ${people}" th:object="${p}">
+        <td th:text="*{id}">id</td>
+        <td th:text="*{name}">name</td>
+        <td th:text="*{surname}">surname</td>
+        <td th:text="*{email}">email</td>
+        <td th:text="*{age}">age</td>
+    </tr>
+</table>
+<form class="form-nonblock" method="post" th:action="@{/clear-list}">
+    <input type="submit" value="Clear list">
+</form>
 
+<form class="form-nonblock" method="post" th:action="@{/clear-id}">
+    <input type="number" name="id" required id="id" title="id">
+    <input type="submit" value="Clear by id">
+</form>
 </body>
 </html>
