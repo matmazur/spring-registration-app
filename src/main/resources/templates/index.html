@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .form-nonblock {
+        .form-non-block {
             display: inline;
         }
 
@@ -30,19 +30,21 @@
     <th>surname</th>
     <th>email</th>
     <th>age</th>
+    <th>&#9986;</th>
     <tr th:if="${!people.isEmpty()}" th:each="p : ${people}" th:object="${p}">
         <td th:text="*{id}">id</td>
         <td th:text="*{name}">name</td>
         <td th:text="*{surname}">surname</td>
         <td th:text="*{email}">email</td>
         <td th:text="*{age}">age</td>
+        <td><a th:href="@{'/delete/'+${p.id}}">&#9986;</a></td>
     </tr>
 </table>
-<form class="form-nonblock" method="post" th:action="@{/clear-list}">
+<form class="form-non-block" method="post" th:action="@{/clear-list}">
     <input type="submit" value="Clear list">
 </form>
 
-<form class="form-nonblock" method="post" th:action="@{/clear-id}">
+<form class="form-non-block" method="post" th:action="@{/clear-id}">
     <input type="number" name="id" required id="id" title="id">
     <input type="submit" value="Clear by id">
 </form>

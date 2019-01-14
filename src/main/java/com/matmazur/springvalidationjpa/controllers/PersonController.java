@@ -62,4 +62,13 @@ public class PersonController {
         }
         return "redirect:/";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteById(@PathVariable(name = "id") Long id) {
+
+        if (id != null) {
+            personRepository.deleteById(id);
+        }
+        return "redirect:/";
+    }
 }
