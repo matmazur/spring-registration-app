@@ -53,11 +53,10 @@ public class PersonController {
         return "redirect:/";
     }
 
-    @PostMapping("/clear-id")
-    public String clearId(@RequestParam(name = "id") Long id, ModelMap modelMap) {
+    @PostMapping("/clear-by-id")
+    public String clearId(@RequestParam(name = "id") Long id) {
 
-        System.out.println(modelMap.get("id"));
-        if (id != null) {
+        if (id != null && personRepository.findById(id).isPresent()) {
             personRepository.deleteById(id);
         }
         return "redirect:/";
