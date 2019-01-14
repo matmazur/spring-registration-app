@@ -20,7 +20,7 @@
     <br>
     <input type="number" placeholder="Age" th:field="*{age}"> <span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
     <br>
-    <input type="submit" value="add">
+    <input type="submit" value="Add"><button><a class="no-decoration-link" th:href="@{/}">Back</a></button>
 </form>
 
 </body>

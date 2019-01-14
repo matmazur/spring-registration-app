@@ -2,11 +2,14 @@
     display: inline;
 }
 
-a {
+.no-decoration-link {
     color: black;
     text-decoration: none;
 }
-.error{
+
+.error {
     color: red;
     size: 1.4em;
 }
+
+
