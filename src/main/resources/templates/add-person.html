@@ -6,30 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .error{
-            color: red;
-            size: 1.4em;
-        }
-    </style>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="../static/css/styles.css">
 </head>
 <body>
 
-<h1></h1>
-
 <h2>Person registration form</h2>
 <form th:method="post" th:action="@{/add-person}" th:object="${person}">
-    <input type="text" placeholder="Name" th:field="*{name}"><span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <input type="text" placeholder="Name" th:field="*{name}"> <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     <br>
-    <input type="text" placeholder="Surname" th:field="*{surname}"><span class="error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+    <input type="text" placeholder="Surname" th:field="*{surname}"> <span class="error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
     <br>
-    <input type="text" placeholder="Email" th:field="*{email}"><span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    <input type="text" placeholder="Email" th:field="*{email}"> <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
     <br>
-    <input type="number" placeholder="Age" th:field="*{age}"><span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    <input type="number" placeholder="Age" th:field="*{age}"> <span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
     <br>
     <input type="submit" value="add">
 </form>
-
 
 </body>
 </html>

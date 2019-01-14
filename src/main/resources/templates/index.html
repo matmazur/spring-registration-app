@@ -10,8 +10,6 @@
 </head>
 <body>
 
-<h1></h1>
-
 <h2>Registration world</h2>
 <button><a th:href="@{/add-person}">Add user</a></button>
 
@@ -31,6 +29,7 @@
         <td><a th:href="@{'/delete/'+${p.id}}">&#9986;</a></td>
     </tr>
 </table>
+
 <form class="form-non-block" method="post" th:action="@{/clear-list}">
     <input type="submit" value="Clear list">
 </form>
